@@ -4,8 +4,8 @@ import openpyxl
 import io
 import pickle
 
-def dataframe_to_xlsx(input_dataframe, folder_name, output_file_name):
-    folder = dataiku.Folder(folder_name)
+def df_to_xlsx(input_dataframe, export_to_folder_name, output_file_name):
+    folder = dataiku.Folder(export_to_folder_name)
     folder_infos = folder.get_info()
     if folder_infos["type"] == "S3":
         pickle_bytes = io.BytesIO()
